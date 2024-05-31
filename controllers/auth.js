@@ -86,7 +86,7 @@ const loginUser = async ( req, res = response ) => {
 
 };
 
-const renewToken = async ( req, res = response ) => {
+const revalidateToken = async ( req, res = response ) => {
 
     const { uid, name } = req;
 
@@ -95,6 +95,8 @@ const renewToken = async ( req, res = response ) => {
 
     res.json({
         ok: true,
+        uid, 
+        name,
         token
     })
 }
@@ -102,5 +104,5 @@ const renewToken = async ( req, res = response ) => {
 module.exports = { 
     createUser, 
     loginUser,
-    renewToken,
+    revalidateToken,
 };
